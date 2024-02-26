@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Test</title>
+</head>
+<body>
+	<h1>network 1</h1>
+    <div id="result"></div>
+
+    <script>
+	    let count = 0;
+        function sendRequest() {
+			if(count >= 20){
+				return;
+			}
+            let startTime = new Date().getTime();
+            fetch('http://服务器公网IP:8081/networkTest', {
+                mode: 'cors',
+				headers: new Headers({
+				'Access-Control-Allow-Origin': '*'
+				})
+            })
+            .then(response => {
+                var resultDiv = document.getElementById('result');
+				let endTime = new Date().getTime();
+                resultDiv.innerHTML += 'Response Time: ' + (endTime - startTime) + 'ms<br>';
+				count++;
+				sendRequest();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+		
+		sendRequest();
+    </script>
+</body>
+</html>

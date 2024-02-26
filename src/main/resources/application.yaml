@@ -1,0 +1,33 @@
+#日志
+logging:
+  config: classpath:log4j2.xml
+
+server:
+  port: 8081
+#spring:
+#  datasource:
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://120.79.151.118:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: 87185033love!
+#      stat-view-servlet:
+#        url-pattern: /druid/*
+#        reset-enable: true
+#        login-username: druid
+#        login-password: druid
+#  redis:
+#    host: 120.79.151.118
+#    port: 6379
+#    password: 87185033love!
+#    jedis:
+#      pool:
+#        max-active: 32
+#    connect-timeout: 500
+##mybatis
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    jdbc-type-for-null: null
+#    auto-mapping-behavior: full
+#  mapper-locations: classpath*:mapping/*.xml
